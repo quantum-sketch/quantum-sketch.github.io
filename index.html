@@ -1,293 +1,342 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ResilientQ | Camada Analítica de Consistência Operacional</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResilientQ | Camada Analítica de Consistência Operacional</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background-color: #f7f8fa;
-    color: #1a1a1a;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 60px;
-}
-
-.logo {
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.5px;
-}
-
-nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #444;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #000;
-}
-
-.hero {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 100px;
-}
-
-.hero h1 {
-    font-size: 40px;
-    font-weight: 700;
-    max-width: 750px;
-    margin: 0;
-}
-
-.hero p {
-    max-width: 700px;
-    color: #555;
-    margin-top: 18px;
-}
-
-.hero img {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 30px;
-    border: 1px solid #1a1a1a;
-    text-decoration: none;
-    color: #1a1a1a;
-    font-weight: 500;
-    transition: 0.2s;
-    border-radius: 6px;
-}
-
-.button:hover {
-    background: #1a1a1a;
-    color: #fff;
-}
-
-.section {
-    margin-bottom: 100px;
-}
-
-.section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.section p {
-    color: #555;
-    max-width: 900px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #e5e5e5;
-    overflow: hidden;
-    transition: 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    border-color: #d0d0d0;
-}
-
-.card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 20px;
-}
-
-.card-content strong {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 16px;
-}
-
-.footer {
-    margin-top: 100px;
-    font-size: 13px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-    padding-top: 30px;
-}
-
-ul {
-    color: #555;
-}
-
-@media (max-width: 900px) {
-    .hero {
-        grid-template-columns: 1fr;
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f7f8fa;
+      color: #1a1a1a;
+      line-height: 1.6;
     }
-}
-</style>
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      margin-left: 22px;
+      text-decoration: none;
+      color: #444;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      max-width: 700px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 8px;
+      border: 1px solid #1a1a1a;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+    }
+
+    .section {
+      margin-bottom: 90px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .section p {
+      color: #555;
+      max-width: 900px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e8e8e8;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+    }
+
+    .card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 18px 18px 20px 18px;
+    }
+
+    .card-content strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .card-content span {
+      display: block;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, rgba(0,0,0,0.04), rgba(0,0,0,0.01));
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid #e5e5e5;
+      margin-top: 30px;
+    }
+
+    .highlight ul {
+      margin: 12px 0 0 18px;
+      color: #444;
+    }
+
+    .banner {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid #e5e5e5;
+      margin-top: 25px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+    }
+
+    .footer {
+      margin-top: 100px;
+      font-size: 13px;
+      color: #777;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 35px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero-img {
+        height: 260px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<header>
-<div class="logo">ResilientQ</div>
-<nav>
-<a href="#solucao">Solução</a>
-<a href="#setores">Setores</a>
-<a href="#pocs">PoCs</a>
-<a href="#contato">Contato</a>
-</nav>
-</header>
+    <header>
+      <div class="logo">ResilientQ</div>
+      <nav>
+        <a href="#solucao">Solução</a>
+        <a href="#setores">Setores</a>
+        <a href="#pocs">PoCs</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
 
-<!-- HERO -->
-<div class="hero">
-<div>
-<h1>Camada Analítica de Consistência Operacional (CACO)</h1>
-<p>
-A ResilientQ desenvolve uma camada analítica complementar voltada à organização estruturada de evidências operacionais.
-O modelo atua como suporte à decisão em ambientes complexos, preservando confidencialidade metodológica.
-</p>
-<a class="button" href="#contato">Solicitar Alinhamento Técnico</a>
-</div>
+    <section class="hero">
+      <div>
+        <h1>Camada Analítica de Consistência Operacional (CACO)</h1>
+        <p>
+          A ResilientQ desenvolve uma camada analítica complementar voltada à organização estruturada de evidências operacionais.
+          O objetivo é apoiar decisões técnicas em ambientes complexos, mantendo confidencialidade metodológica.
+        </p>
+        <a class="button" href="#contato">Solicitar Alinhamento Técnico</a>
+      </div>
 
-<div>
-<img src="assets/img/hero-datacenter.jpg" alt="Infraestrutura crítica de datacenter">
-</div>
-</div>
+      <img class="hero-img" src="assets/img/hero-datacenter.jpg" alt="Infraestrutura crítica e sistemas digitais" />
+    </section>
 
-<!-- SOLUÇÃO -->
-<div class="section" id="solucao">
-<h2>Solução</h2>
-<p>
-A tecnologia organiza sinais e indicadores sob condições controladas, identificando padrões de estabilidade e variação operacional.
-Atua como camada complementar aos sistemas existentes, contribuindo para triagem técnica e priorização de análise.
-Metodologia proprietária não é exposta publicamente.
-</p>
-</div>
+    <section class="section" id="solucao">
+      <h2>Solução</h2>
+      <p>
+        A tecnologia organiza sinais e indicadores sob condições controladas, identificando padrões de estabilidade e variação operacional.
+        Atua como camada complementar aos sistemas existentes, contribuindo para triagem técnica e priorização de análise.
+        Metodologia proprietária não é exposta publicamente.
+      </p>
 
-<!-- SETORES -->
-<div class="section" id="setores">
-<h2>Setores de Aplicação</h2>
+      <div class="highlight">
+        <strong>O que entregamos:</strong>
+        <ul>
+          <li>Organização estruturada de evidências operacionais</li>
+          <li>Identificação de janelas relevantes para avaliação técnica</li>
+          <li>Relatório sanitizado para suporte à decisão</li>
+          <li>Processo adaptável a diferentes setores e fontes de dados</li>
+        </ul>
+      </div>
+    </section>
 
-<div class="cards">
+    <section class="section" id="setores">
+      <h2>Setores de Aplicação</h2>
+      <p>
+        A ResilientQ opera com abordagem institucional e adaptável, permitindo validações controladas em múltiplos setores.
+        Cada PoC é conduzida com escopo definido e entrega objetiva.
+      </p>
 
-<div class="card">
-<img src="assets/img/sector-agro.jpg" alt="Agronegócio">
-<div class="card-content">
-<strong>Agronegócio</strong>
-Consistência operacional em ambientes agrícolas e variabilidade ambiental.
-</div>
-</div>
+      <div class="cards">
 
-<div class="card">
-<img src="assets/img/datacenter-corridor.jpg" alt="Datacenter">
-<div class="card-content">
-<strong>IA & Datacenters</strong>
-Interpretação estruturada de sinais em infraestrutura digital crítica.
-</div>
-</div>
+        <a class="card" href="agro.html">
+          <img src="assets/img/sector-agro.jpg" alt="Agronegócio" />
+          <div class="card-content">
+            <strong>Agronegócio</strong>
+            <span>Consistência operacional em ambientes agrícolas e variabilidade ambiental.</span>
+          </div>
+        </a>
 
-<div class="card">
-<img src="assets/img/sector-satellite.jpg" alt="Satélite">
-<div class="card-content">
-<strong>Espacial & Satélites</strong>
-Análise estrutural em séries observacionais e dados públicos orbitais.
-</div>
-</div>
+        <a class="card" href="datacenter.html">
+          <img src="assets/img/datacenter-corridor.jpg" alt="IA e Datacenters" />
+          <div class="card-content">
+            <strong>IA & Datacenters</strong>
+            <span>Interpretação estruturada de sinais em infraestrutura digital crítica.</span>
+          </div>
+        </a>
 
-<div class="card">
-<img src="assets/img/sector-drone.jpg" alt="Drone">
-<div class="card-content">
-<strong>Drones & Mobilidade Aérea</strong>
-Operação sob variação controlada em ambientes dinâmicos.
-</div>
-</div>
+        <a class="card" href="satelites.html">
+          <img src="assets/img/sector-satellite.jpg" alt="Espacial e Satélites" />
+          <div class="card-content">
+            <strong>Espacial & Satélites</strong>
+            <span>Análise estrutural em séries observacionais e dados públicos orbitais.</span>
+          </div>
+        </a>
 
-<div class="card">
-<img src="assets/img/sector-industrial.jpg" alt="Indústria">
-<div class="card-content">
-<strong>Indústria & Motores</strong>
-Triagem de consistência operacional em sistemas mecânicos e eletromecânicos.
-</div>
-</div>
+        <a class="card" href="drones.html">
+          <img src="assets/img/sector-drone.jpg" alt="Drones e Mobilidade Aérea" />
+          <div class="card-content">
+            <strong>Drones & Mobilidade Aérea</strong>
+            <span>Operação sob variação controlada em ambientes dinâmicos.</span>
+          </div>
+        </a>
 
-</div>
-</div>
+        <a class="card" href="industria.html">
+          <img src="assets/img/sector-industrial.jpg" alt="Indústria e Motores" />
+          <div class="card-content">
+            <strong>Indústria & Motores</strong>
+            <span>Triagem de consistência operacional em sistemas mecânicos e eletromecânicos.</span>
+          </div>
+        </a>
 
-<!-- POCS -->
-<div class="section" id="pocs">
-<h2>Provas de Conceito (PoCs)</h2>
+      </div>
+    </section>
 
-<p>
-Agenda aberta para Provas de Conceito institucionais.  
-Formato típico:
-</p>
+    <section class="section" id="pocs">
+      <h2>Provas de Conceito (PoCs)</h2>
+      <p>
+        Agenda aberta para Provas de Conceito institucionais.
+        O formato é objetivo, com foco em evidências organizadas e validação controlada.
+      </p>
 
-<ul>
-<li>Duração estimada: 4–6 semanas</li>
-<li>Escopo: dados públicos ou dados fornecidos pelo parceiro</li>
-<li>Entregável: relatório técnico sanitizado com evidências organizadas</li>
-</ul>
+      <div class="highlight">
+        <strong>Formato típico de PoC:</strong>
+        <ul>
+          <li>Duração estimada: 4–6 semanas</li>
+          <li>Escopo: dados públicos ou dados fornecidos pelo parceiro</li>
+          <li>Entregável: relatório técnico sanitizado com evidências organizadas</li>
+          <li>Modelo institucional: sem exposição de metodologia proprietária</li>
+        </ul>
+      </div>
 
-<p>
-Estudos demonstrativos baseados em dados públicos estão disponíveis mediante solicitação.
-</p>
+      <img class="banner" src="assets/img/tech-network.jpg" alt="Rede analítica e conectividade" />
+    </section>
 
-<img src="assets/img/tech-network.jpg" alt="Rede tecnológica" style="width:100%; border-radius:10px; border:1px solid #ddd; margin-top:25px;">
-</div>
+    <section class="section" id="contato">
+      <h2>Contato</h2>
+      <p>
+        Para alinhamento técnico ou avaliação de PoC:
+      </p>
 
-<!-- CONTATO -->
-<div class="section" id="contato">
-<h2>Contato</h2>
+      <p style="font-weight:600;">
+        Email: <a href="mailto:quantum@25clayton.com" style="color:#1a1a1a; text-decoration:none;">quantum@25clayton.com</a>
+      </p>
+    </section>
 
-<p>
-Para alinhamento técnico ou avaliação de PoC:
-</p>
+    <div class="footer">
+      © 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos. <br>
+      Camada analítica complementar. Metodologia proprietária não exposta.
+    </div>
 
-<p>
-Email: <a href="mailto:contato@resilientq.com">contato@resilientq.com</a><br>
-LinkedIn: <a href="https://linkedin.com/company/resilientq" target="_blank">linkedin.com/company/resilientq</a>
-</p>
-</div>
-
-<div class="footer">
-© 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos.<br>
-Camada analítica complementar. Metodologia proprietária não exposta.
-</div>
-
-</div>
+  </div>
 
 </body>
 </html>
