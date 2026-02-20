@@ -1,303 +1,41 @@
+<!-- Improved responsive design and mobile menu toggle -->
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ResilientQ | Drones & Mobilidade Aérea</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #f7f8fa;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1180px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 20px;
-      letter-spacing: 0.5px;
-    }
-
-    nav a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: #444;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: #000;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 90px;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      font-weight: 800;
-      margin: 0 0 18px 0;
-      max-width: 700px;
-    }
-
-    .hero p {
-      max-width: 640px;
-      color: #555;
-      font-size: 16px;
-      margin-bottom: 26px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 30px;
-      border-radius: 8px;
-      border: 1px solid #1a1a1a;
-      text-decoration: none;
-      color: #1a1a1a;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      background: #1a1a1a;
-      color: #fff;
-    }
-
-    .hero-img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid #e5e5e5;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
-    }
-
-    .section {
-      margin-bottom: 90px;
-    }
-
-    .section h2 {
-      font-size: 22px;
-      margin-bottom: 16px;
-      font-weight: 800;
-    }
-
-    .section p {
-      color: #555;
-      max-width: 950px;
-      font-size: 15px;
-    }
-
-    .highlight {
-      background: linear-gradient(120deg, rgba(0,0,0,0.04), rgba(0,0,0,0.01));
-      padding: 28px;
-      border-radius: 12px;
-      border: 1px solid #e5e5e5;
-      margin-top: 30px;
-    }
-
-    .highlight ul {
-      margin: 12px 0 0 18px;
-      color: #444;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      border: 1px solid #e8e8e8;
-      padding: 22px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
-
-    .card strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 15px;
-      font-weight: 800;
-    }
-
-    .card span {
-      font-size: 14px;
-      color: #555;
-    }
-
-    .footer {
-      margin-top: 100px;
-      font-size: 13px;
-      color: #777;
-      border-top: 1px solid #e5e5e5;
-      padding-top: 35px;
-      text-align: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero-img {
-        height: 260px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Drones</title>
 </head>
-
 <body>
-
-  <div class="container">
-
     <header>
-      <div class="logo">ResilientQ</div>
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="index.html#solucao">Solução</a>
-        <a href="index.html#setores">Setores</a>
-        <a href="index.html#pocs">PoCs</a>
-        <a href="index.html#contato">Contato</a>
-      </nav>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+    <main>
+        <article>
+            <h1>Drones</h1>
+            <p>This is the content about drones...</p>
+        </article>
+    </main>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
 
-    <section class="hero">
-      <div>
-        <h1>Drones & Mobilidade Aérea</h1>
-        <p>
-          Operações com drones e mobilidade aérea avançada exigem estabilidade operacional sob múltiplas condições,
-          variações de ambiente e rotinas dinâmicas.
-          A ResilientQ atua como uma camada analítica complementar voltada à organização estruturada de evidências,
-          apoiando triagem técnica e tomada de decisão em cenários críticos.
-        </p>
-
-        <a class="button" href="index.html#contato">Solicitar Avaliação de PoC</a>
-      </div>
-
-      <img class="hero-img" src="assets/img/drone-operations.jpg" alt="Operação com drones e mobilidade aérea" />
-    </section>
-
-    <section class="section">
-      <h2>Contexto Operacional</h2>
-      <p>
-        Sistemas aéreos não tripulados operam em ambientes com variabilidade contínua: vento, temperatura,
-        carga útil, rotas dinâmicas, condições urbanas, interferências externas e restrições operacionais.
-        Pequenas oscilações estruturais podem se acumular e comprometer confiabilidade, estabilidade e segurança,
-        mesmo quando sinais aparentam normalidade em avaliações superficiais.
-      </p>
-
-      <p>
-        A ResilientQ organiza evidências técnicas sob condições controladas, permitindo avaliação comparativa e
-        suporte institucional para revisão e priorização operacional.
-        Metodologia proprietária não é exposta publicamente.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>O que a PoC entrega neste setor</h2>
-
-      <div class="highlight">
-        <strong>Entregáveis típicos:</strong>
-        <ul>
-          <li>Relatório sanitizado com evidências organizadas e rastreáveis</li>
-          <li>Estrutura comparativa entre períodos e condições operacionais</li>
-          <li>Identificação de janelas relevantes para análise dirigida</li>
-          <li>Indicadores consolidados para triagem técnica e suporte à decisão</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Aplicações estratégicas (exemplos)</h2>
-
-      <div class="cards">
-
-        <div class="card">
-          <strong>Auditoria Operacional</strong>
-          <span>
-            Organização de sinais e evidências de missão para revisão técnica em ambientes de alta variabilidade.
-          </span>
-        </div>
-
-        <div class="card">
-          <strong>Gestão de Risco</strong>
-          <span>
-            Suporte analítico para priorização de análise em operações críticas e ambientes urbanos complexos.
-          </span>
-        </div>
-
-        <div class="card">
-          <strong>Continuidade Operacional</strong>
-          <span>
-            Estruturação de evidências para apoiar estabilidade e confiabilidade sob intensidades progressivas de variação.
-          </span>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Formato da PoC</h2>
-      <p>
-        A PoC pode ser conduzida com dados públicos, séries de simulação controlada ou dados fornecidos pelo parceiro.
-        O foco é estruturar evidências e apoiar análise técnica de forma objetiva e institucional.
-      </p>
-
-      <div class="highlight">
-        <strong>Formato típico:</strong>
-        <ul>
-          <li>Duração: 4–6 semanas</li>
-          <li>Escopo: definido junto ao parceiro</li>
-          <li>Entrega: relatório técnico sanitizado</li>
-          <li>Evidências rastreáveis sob NDA (quando aplicável)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Contato</h2>
-      <p>
-        Para avaliação técnica ou alinhamento institucional:
-      </p>
-
-      <p style="font-weight:700;">
-        Email: <a href="mailto:quantum@25clayton.com" style="color:#1a1a1a; text-decoration:none;">quantum@25clayton.com</a>
-      </p>
-    </section>
-
-    <div class="footer">
-      © 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos. <br>
-      Camada analítica complementar. Metodologia proprietária não exposta.
-    </div>
-
-  </div>
-
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
