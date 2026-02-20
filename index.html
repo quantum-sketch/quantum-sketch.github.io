@@ -4,103 +4,215 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ResilientQ | Camada Analítica de Consistência Operacional</title>
+
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0e1117;
-    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f7f8fa;
+    color: #1a1a1a;
+    line-height: 1.6;
 }
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
 header {
-    text-align: center;
-    padding: 80px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
 }
-h1 {
-    font-size: 36px;
+
+.logo {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.hero {
+    margin-bottom: 80px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    font-weight: 600;
+    max-width: 750px;
+}
+
+.hero p {
+    max-width: 700px;
+    color: #555;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    border: 1px solid #1a1a1a;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.section {
+    margin-bottom: 80px;
+}
+
+.section h2 {
+    font-size: 22px;
     margin-bottom: 20px;
 }
-h2 {
-    color: #58a6ff;
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
-section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
+
 .card {
-    background-color: #161b22;
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 14px;
-    color: #8b949e;
-}
-button {
-    background-color: #238636;
-    color: white;
-    border: none;
-    padding: 15px 25px;
+    background: #ffffff;
+    padding: 25px;
     border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+    border: 1px solid #e5e5e5;
 }
-button:hover {
-    background-color: #2ea043;
+
+.card strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer {
+    margin-top: 100px;
+    font-size: 13px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 30px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <header>
-<h1>ResilientQ</h1>
-<p>Camada Analítica de Consistência Operacional (CACO)</p>
-<br>
-<button onclick="location.href='#contato'">Solicitar Contato</button>
+<div class="logo">ResilientQ</div>
+<nav>
+<a href="#solucao">Solução</a>
+<a href="#setores">Setores</a>
+<a href="#pocs">PoCs</a>
+<a href="#contato">Contato</a>
+</nav>
 </header>
 
-<section>
-<div class="card">
-<h2>Sobre</h2>
+<div class="hero">
+<h1>Camada Analítica de Consistência Operacional</h1>
 <p>
-A ResilientQ desenvolve uma camada analítica complementar voltada à interpretação estruturada de sinais operacionais.
-Nosso modelo atua como apoio à decisão, identificando variações persistentes e alterações de comportamento em ambientes complexos.
+A ResilientQ desenvolve uma camada analítica complementar voltada à organização estruturada de evidências operacionais.
+O modelo atua como suporte à decisão em ambientes complexos, preservando confidencialidade metodológica.
+</p>
+<a class="button" href="#contato">Solicitar Alinhamento Técnico</a>
+</div>
+
+<div class="section" id="solucao">
+<h2>Solução</h2>
+<p>
+A tecnologia organiza sinais e indicadores sob condições controladas, identificando padrões de estabilidade e variação operacional.
+Atua como camada complementar aos sistemas existentes, contribuindo para triagem técnica e priorização de análise.
+Metodologia proprietária não é exposta publicamente.
 </p>
 </div>
 
+<div class="section" id="setores">
+<h2>Setores de Aplicação</h2>
+
+<div class="cards">
+
 <div class="card">
-<h2>Soluções</h2>
-<p><strong>IA & Datacenters:</strong> Interpretação estrutural de sinais operacionais em ambientes de alta demanda computacional.</p>
-<p><strong>Análise Satelital:</strong> Leitura estruturada de padrões em dados públicos e sensoriamento remoto.</p>
-<p><strong>Motores Industriais:</strong> Apoio à decisão operacional baseado em variação de comportamento e consistência sistêmica.</p>
+<strong>Agronegócio</strong>
+Consistência operacional em ambientes agrícolas e variabilidade ambiental.
 </div>
 
 <div class="card">
-<h2>Proposta de Valor</h2>
+<strong>IA & Datacenters</strong>
+Interpretação estruturada de sinais em infraestrutura digital crítica.
+</div>
+
+<div class="card">
+<strong>Espacial & Satélites</strong>
+Análise estrutural em séries observacionais e dados públicos orbitais.
+</div>
+
+<div class="card">
+<strong>Drones & Mobilidade Aérea</strong>
+Operação sob variação controlada em ambientes dinâmicos.
+</div>
+
+<div class="card">
+<strong>Indústria & Motores</strong>
+Triagem de consistência operacional em sistemas mecânicos e eletromecânicos.
+</div>
+
+</div>
+</div>
+
+<div class="section" id="pocs">
+<h2>Provas de Conceito (PoCs)</h2>
 <p>
-Nossa abordagem permite leitura técnica complementar aos sistemas existentes,
-oferecendo apoio decisório com foco em consistência operacional e redução de incerteza.
+Agenda aberta para Provas de Conceito institucionais.
+Formato típico:
 </p>
-</div>
-</section>
 
-<section id="contato">
-<div class="card">
+<ul>
+<li>Duração estimada: 4–6 semanas</li>
+<li>Escopo: dados públicos ou dados fornecidos pelo parceiro</li>
+<li>Entregável: relatório técnico sanitizado com evidências organizadas</li>
+</ul>
+
+<p>
+Aplicações demonstrativas realizadas com dados públicos estão disponíveis mediante solicitação.
+</p>
+
+</div>
+
+<div class="section" id="contato">
 <h2>Contato</h2>
-<p>Email: contato@resilientq.com</p>
-<p>LinkedIn: linkedin.com/in/claytonsantos</p>
-</div>
-</section>
+<p>
+Para alinhamento técnico ou avaliação de PoC:
+</p>
 
-<footer>
-© 2026 ResilientQ | Camada Analítica Complementar de Apoio à Decisão
-</footer>
+<p>
+Email: contato@SEUDOMINIO.com<br>
+LinkedIn: linkedin.com/company/resilientq
+</p>
+</div>
+
+<div class="footer">
+© 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos.
+Camada analítica complementar. Metodologia proprietária não exposta.
+</div>
+
+</div>
 
 </body>
 </html>
-
-
