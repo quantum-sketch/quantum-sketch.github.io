@@ -1,199 +1,197 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ResilientQ | Drones & Mobilidade Aérea</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResilientQ | Drones & Mobilidade Aérea</title>
 
-  <style>
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f7f8fa;color:#1a1a1a;line-height:1.6}
-    .container{max-width:1180px;margin:auto;padding:60px 20px}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:60px;position:relative}
-    .logo{font-weight:700;font-size:20px;letter-spacing:.5px;z-index:1001}
+<style>
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f7f8fa;color:#1a1a1a;line-height:1.6}
+.container{max-width:1180px;margin:auto;padding:60px 20px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:60px}
+.logo{font-weight:700;font-size:20px;letter-spacing:.5px}
 
-    /* MENU */
-    nav{display:flex;align-items:center}
-    nav a{margin-left:22px;text-decoration:none;color:#444;font-size:14px;font-weight:500}
-    nav a:hover{color:#000}
+nav{display:flex;align-items:center}
+nav a{margin-left:22px;text-decoration:none;color:#444;font-size:14px;font-weight:500}
+nav a:hover{color:#000}
 
-    /* BOTÃO HAMBURGER */
-    .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:8px;z-index:1002}
-    .menu-toggle span{width:24px;height:3px;background:#1a1a1a;border-radius:2px;transition:.3s}
-    .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
-    .menu-toggle.active span:nth-child(2){opacity:0}
-    .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;margin-bottom:90px}
+.hero h1{font-size:40px;font-weight:800;margin:0 0 18px 0}
+.hero p{max-width:640px;color:#555;font-size:16px;margin-bottom:26px}
 
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;margin-bottom:90px}
-    .hero h1{font-size:40px;font-weight:800;margin:0 0 18px 0;max-width:700px}
-    .hero p{max-width:640px;color:#555;font-size:16px;margin-bottom:26px}
-    .button{display:inline-block;padding:14px 30px;border-radius:8px;border:1px solid #1a1a1a;text-decoration:none;color:#1a1a1a;font-weight:600;transition:.2s}
-    .button:hover{background:#1a1a1a;color:#fff}
-    .hero-img{width:100%;height:360px;object-fit:cover;border-radius:12px;border:1px solid #e5e5e5;box-shadow:0 18px 50px rgba(0,0,0,.12)}
+.button{display:inline-block;padding:14px 30px;border-radius:8px;border:1px solid #1a1a1a;text-decoration:none;color:#1a1a1a;font-weight:600;transition:.2s}
+.button:hover{background:#1a1a1a;color:#fff}
 
-    .section{margin-bottom:90px}
-    .section h2{font-size:22px;margin-bottom:16px;font-weight:800}
-    .section p{color:#555;max-width:950px;font-size:15px}
+.hero-img{
+width:100%;
+height:360px;
+object-fit:cover;
+border-radius:12px;
+border:1px solid #e5e5e5;
+box-shadow:0 18px 50px rgba(0,0,0,.12)
+}
 
-    .highlight{background:linear-gradient(120deg,rgba(0,0,0,.04),rgba(0,0,0,.01));padding:28px;border-radius:12px;border:1px solid #e5e5e5;margin-top:30px}
-    .highlight ul{margin:12px 0 0 18px;color:#444}
+.section{margin-bottom:90px}
+.section h2{font-size:22px;margin-bottom:16px;font-weight:800}
+.section p{color:#555;max-width:950px;font-size:15px}
 
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:30px}
-    .card{background:#fff;border-radius:12px;border:1px solid #e8e8e8;padding:22px;box-shadow:0 10px 20px rgba(0,0,0,.05)}
-    .card strong{display:block;margin-bottom:10px;font-size:15px;font-weight:800}
-    .card span{font-size:14px;color:#555}
+.highlight{
+background:linear-gradient(120deg,rgba(0,0,0,.04),rgba(0,0,0,.01));
+padding:28px;
+border-radius:12px;
+border:1px solid #e5e5e5;
+margin-top:30px
+}
 
-    .footer{margin-top:100px;font-size:13px;color:#777;border-top:1px solid #e5e5e5;padding-top:35px;text-align:center}
-    .contact-link{color:#1a1a1a;text-decoration:none;font-weight:600}
-    .contact-link:hover{text-decoration:underline}
+.highlight ul{margin:12px 0 0 18px;color:#444}
 
-    /* MOBILE */
-    @media (max-width:900px){
-      .menu-toggle{display:flex}
-      nav{
-        position:absolute;top:58px;left:0;right:0;
-        flex-direction:column;align-items:stretch;
-        background:#fff;border:1px solid #e5e5e5;border-radius:10px;
-        padding:10px 0;box-shadow:0 10px 25px rgba(0,0,0,.1);
-        max-height:0;overflow:hidden;transition:max-height .3s ease;
-      }
-      nav.active{max-height:320px}
-      nav a{margin:0;padding:12px 20px;border-bottom:1px solid #f0f0f0}
-      nav a:last-child{border-bottom:none}
-      .hero{grid-template-columns:1fr}
-      .hero-img{height:260px}
-      .hero h1{font-size:32px}
-      .container{padding:40px 20px}
-      header{margin-bottom:40px}
-      .section{margin-bottom:60px}
-    }
-  </style>
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:22px;
+margin-top:30px
+}
+
+.card{
+background:#fff;
+border-radius:12px;
+border:1px solid #e8e8e8;
+padding:22px;
+box-shadow:0 10px 20px rgba(0,0,0,.05)
+}
+
+.card strong{display:block;margin-bottom:10px;font-size:15px;font-weight:800}
+.card span{font-size:14px;color:#555}
+
+.footer{
+margin-top:100px;
+font-size:13px;
+color:#777;
+border-top:1px solid #e5e5e5;
+padding-top:35px;
+text-align:center
+}
+
+.contact-link{color:#1a1a1a;text-decoration:none;font-weight:600}
+.contact-link:hover{text-decoration:underline}
+
+@media (max-width:900px){
+.hero{grid-template-columns:1fr}
+.hero-img{height:260px}
+.hero h1{font-size:32px}
+.container{padding:40px 20px}
+.section{margin-bottom:60px}
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">ResilientQ</div>
+<div class="container">
 
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<header>
+<div class="logo">ResilientQ</div>
+<nav>
+<a href="index.html">Início</a>
+<a href="index.html#solucao">Solução</a>
+<a href="index.html#setores">Setores</a>
+<a href="index.html#pocs">PoCs</a>
+<a href="index.html#contato">Contato</a>
+</nav>
+</header>
 
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="index.html#solucao">Solução</a>
-        <a href="index.html#setores">Setores</a>
-        <a href="index.html#pocs">PoCs</a>
-        <a href="index.html#contato">Contato</a>
-      </nav>
-    </header>
+<section class="hero">
+<div>
+<h1>Drones & Mobilidade Aérea</h1>
+<p>
+Operações com drones exigem consistência operacional sob múltiplas condições ambientais,
+variações de missão e restrições técnicas dinâmicas.
+A ResilientQ atua como camada analítica complementar para organizar evidências estruturais,
+apoiando triagem técnica e decisões em ambientes críticos.
+</p>
 
-    <section class="hero">
-      <div>
-        <h1>Drones & Mobilidade Aérea</h1>
-        <p>
-          Operações com drones exigem estabilidade operacional sob múltiplas condições e rotinas dinâmicas.
-          A ResilientQ atua como camada analítica complementar para organização estruturada de evidências,
-          apoiando triagem técnica e decisão em cenários críticos.
-        </p>
-        <a class="button" href="index.html#contato">Solicitar Avaliação de PoC</a>
-      </div>
+<a class="button" href="index.html#contato">Solicitar Avaliação de PoC</a>
+</div>
 
-      <img class="hero-img" src="assets/img/drone-operations.jpg" alt="Operação com drones e mobilidade aérea" loading="lazy" />
-    </section>
+<!-- CAMINHO CORRETO -->
+<img class="hero-img"
+     src="assets/img/sector-drone.jpg"
+     alt="Operação com drones e mobilidade aérea"
+     loading="lazy">
+</section>
 
-    <section class="section">
-      <h2>Contexto Operacional</h2>
-      <p>
-        Sistemas aéreos não tripulados operam sob variabilidade contínua: ambiente, carga útil, rotas,
-        restrições operacionais e interferências externas. Oscilações estruturais podem se acumular e
-        comprometer confiabilidade e segurança, mesmo quando sinais aparentam normalidade em avaliações superficiais.
-      </p>
-      <p>
-        A ResilientQ organiza evidências técnicas sob condições controladas para suporte institucional
-        à revisão e priorização operacional. Metodologia proprietária não é exposta publicamente.
-      </p>
-    </section>
+<section class="section">
+<h2>Contexto Operacional</h2>
+<p>
+Sistemas aéreos não tripulados operam sob variabilidade contínua: vento, temperatura,
+carga útil, rotas dinâmicas, interferências externas e mudanças operacionais rápidas.
+Mesmo pequenas variações podem gerar impactos acumulados sobre estabilidade e confiabilidade.
+</p>
 
-    <section class="section">
-      <h2>O que a PoC entrega neste setor</h2>
-      <div class="highlight">
-        <strong>Entregáveis típicos:</strong>
-        <ul>
-          <li>Relatório sanitizado com evidências organizadas e rastreáveis</li>
-          <li>Estrutura comparativa entre períodos e condições operacionais</li>
-          <li>Identificação de janelas relevantes para análise dirigida</li>
-          <li>Indicadores consolidados para triagem técnica e suporte à decisão</li>
-        </ul>
-      </div>
-    </section>
+<p>
+A ResilientQ estrutura evidências auditáveis sob condições controladas,
+permitindo comparação técnica entre períodos e suporte institucional para priorização operacional.
+Metodologia proprietária não é exposta publicamente.
+</p>
+</section>
 
-    <section class="section">
-      <h2>Aplicações estratégicas</h2>
-      <div class="cards">
-        <div class="card"><strong>Auditoria Operacional</strong><span>Organização de sinais e evidências de missão para revisão técnica.</span></div>
-        <div class="card"><strong>Gestão de Risco</strong><span>Suporte à priorização de análise em operações críticas e ambientes urbanos.</span></div>
-        <div class="card"><strong>Continuidade Operacional</strong><span>Estruturação de evidências para apoiar estabilidade sob variação.</span></div>
-      </div>
-    </section>
+<section class="section">
+<h2>O que a PoC entrega neste setor</h2>
 
-    <section class="section">
-      <h2>Formato da PoC</h2>
-      <p>
-        A PoC pode ser conduzida com dados públicos, simulação controlada ou dados fornecidos pelo parceiro.
-        O foco é estruturar evidências e apoiar análise técnica de forma objetiva e institucional.
-      </p>
-      <div class="highlight">
-        <strong>Formato típico:</strong>
-        <ul>
-          <li>Duração: 4–6 semanas</li>
-          <li>Escopo: definido junto ao parceiro</li>
-          <li>Entrega: relatório técnico sanitizado</li>
-          <li>Evidências rastreáveis sob NDA (quando aplicável)</li>
-        </ul>
-      </div>
-    </section>
+<div class="highlight">
+<strong>Entregáveis típicos:</strong>
+<ul>
+<li>Relatório sanitizado com evidências organizadas e rastreáveis</li>
+<li>Comparação entre condições e períodos operacionais</li>
+<li>Identificação de janelas relevantes para análise dirigida</li>
+<li>Base para triagem técnica e suporte à decisão</li>
+</ul>
+</div>
+</section>
 
-    <section class="section">
-      <h2>Contato</h2>
-      <p style="font-weight:700;">
-        Email: <a class="contact-link" href="mailto:quantum@25clayton.com">quantum@25clayton.com</a>
-      </p>
-    </section>
+<section class="section">
+<h2>Aplicações estratégicas</h2>
 
-    <div class="footer">
-      © 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos.<br>
-      Camada analítica complementar. Metodologia proprietária não exposta.
-    </div>
-  </div>
+<div class="cards">
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('nav');
+<div class="card">
+<strong>Auditoria Operacional</strong>
+<span>
+Organização de sinais e evidências de missão para revisão técnica em ambientes de alta variabilidade.
+</span>
+</div>
 
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        nav.classList.toggle('active');
-        btn.setAttribute('aria-expanded', btn.classList.contains('active') ? 'true' : 'false');
-      });
+<div class="card">
+<strong>Gestão de Risco</strong>
+<span>
+Suporte analítico para priorização de análise em operações críticas e ambientes complexos.
+</span>
+</div>
 
-      nav.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          btn.classList.remove('active');
-          nav.classList.remove('active');
-          btn.setAttribute('aria-expanded','false');
-        });
-      });
+<div class="card">
+<strong>Continuidade Operacional</strong>
+<span>
+Estruturação de evidências para apoiar estabilidade e confiabilidade sob intensidades progressivas de variação.
+</span>
+</div>
 
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('header')) {
-          btn.classList.remove('active');
-          nav.classList.remove('active');
-          btn.setAttribute('aria-expanded','false');
-        }
-      });
-    });
-  </script>
+</div>
+</section>
+
+<section class="section">
+<h2>Contato</h2>
+<p style="font-weight:700;">
+Email:
+<a class="contact-link" href="mailto:quantum@25clayton.com">
+quantum@25clayton.com
+</a>
+</p>
+</section>
+
+<div class="footer">
+© 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos.<br>
+Camada analítica complementar. Metodologia proprietária não exposta.
+</div>
+
+</div>
 </body>
 </html>
