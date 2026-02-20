@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResilientQ | IA & Datacenters</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f7f8fa;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      margin-left: 22px;
+      text-decoration: none;
+      color: #444;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      margin: 0 0 18px 0;
+      max-width: 700px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 8px;
+      border: 1px solid #1a1a1a;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+    }
+
+    .section {
+      margin-bottom: 90px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .section p {
+      color: #555;
+      max-width: 950px;
+      font-size: 15px;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, rgba(0,0,0,0.04), rgba(0,0,0,0.01));
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid #e5e5e5;
+      margin-top: 30px;
+    }
+
+    .highlight ul {
+      margin: 12px 0 0 18px;
+      color: #444;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e8e8e8;
+      padding: 22px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .card span {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .footer {
+      margin-top: 100px;
+      font-size: 13px;
+      color: #777;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 35px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero-img {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="logo">ResilientQ</div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="index.html#solucao">Solução</a>
+        <a href="index.html#setores">Setores</a>
+        <a href="index.html#pocs">PoCs</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>IA & Datacenters</h1>
+        <p>
+          Ambientes de IA exigem estabilidade operacional em escala.
+          A ResilientQ atua como uma camada analítica complementar voltada à organização estruturada de evidências técnicas,
+          apoiando decisões em infraestrutura digital crítica.
+        </p>
+
+        <a class="button" href="index.html#contato">Solicitar Avaliação de PoC</a>
+      </div>
+
+      <img class="hero-img" src="assets/img/hero-datacenter.jpg" alt="Datacenter e infraestrutura crítica" />
+    </section>
+
+    <section class="section">
+      <h2>Contexto Operacional</h2>
+      <p>
+        Datacenters modernos operam sob pressões simultâneas: alta densidade computacional,
+        variabilidade térmica, consumo energético, rotinas de manutenção, restrições de redundância
+        e padrões operacionais dinâmicos.
+        Pequenas alterações podem gerar efeitos acumulados, impactando disponibilidade, eficiência e confiabilidade.
+      </p>
+
+      <p>
+        A ResilientQ apoia equipes técnicas na organização de evidências e na interpretação estruturada de sinais,
+        com abordagem institucional e sem exposição pública de metodologia proprietária.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>O que a PoC entrega neste setor</h2>
+
+      <div class="highlight">
+        <strong>Entregáveis típicos:</strong>
+        <ul>
+          <li>Relatório sanitizado com evidências organizadas e rastreáveis</li>
+          <li>Identificação de janelas relevantes de variação operacional</li>
+          <li>Estrutura comparativa entre períodos operacionais</li>
+          <li>Base para priorização técnica e triagem de análise</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Aplicações estratégicas (exemplos)</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <strong>Infraestrutura de IA</strong>
+          <span>
+            Suporte analítico para avaliação de consistência em ambientes com alta demanda computacional
+            e variação operacional recorrente.
+          </span>
+        </div>
+
+        <div class="card">
+          <strong>Eficiência Energética</strong>
+          <span>
+            Organização de evidências operacionais para mapear estabilidade e variabilidade de consumo,
+            permitindo análises estruturadas sob condições controladas.
+          </span>
+        </div>
+
+        <div class="card">
+          <strong>Gestão de Risco Operacional</strong>
+          <span>
+            Triagem técnica baseada em sinais e registros operacionais, contribuindo para tomada de decisão
+            em cenários críticos.
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Formato da PoC</h2>
+      <p>
+        A PoC pode ser conduzida com dados públicos, dados fornecidos pelo parceiro ou séries operacionais sanitizadas.
+        O foco é estruturar evidências e apoiar análise técnica de forma objetiva.
+      </p>
+
+      <div class="highlight">
+        <strong>Formato típico:</strong>
+        <ul>
+          <li>Duração: 4–6 semanas</li>
+          <li>Escopo: definido junto ao parceiro</li>
+          <li>Entrega: relatório técnico sanitizado</li>
+          <li>Metodologia proprietária não exposta publicamente</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Contato</h2>
+      <p>
+        Para avaliação técnica ou alinhamento institucional:
+      </p>
+
+      <p style="font-weight:700;">
+        Email: <a href="mailto:quantum@25clayton.com" style="color:#1a1a1a; text-decoration:none;">quantum@25clayton.com</a>
+      </p>
+    </section>
+
+    <div class="footer">
+      © 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos. <br>
+      Camada analítica complementar. Metodologia proprietária não exposta.
+    </div>
+
+  </div>
+
+</body>
+</html>
