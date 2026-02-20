@@ -28,8 +28,9 @@ header {
 }
 
 .logo {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 22px;
+    letter-spacing: 0.5px;
 }
 
 nav a {
@@ -43,26 +44,31 @@ nav a:hover {
     color: #000;
 }
 
-/* HERO COM IMAGEM */
 .hero {
-    margin-bottom: 80px;
-}
-
-.hero img {
-    width: 100%;
-    border-radius: 6px;
-    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
 .hero h1 {
-    font-size: 38px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 700;
     max-width: 750px;
+    margin: 0;
 }
 
 .hero p {
     max-width: 700px;
     color: #555;
+    margin-top: 18px;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
 .button {
@@ -74,6 +80,7 @@ nav a:hover {
     color: #1a1a1a;
     font-weight: 500;
     transition: 0.2s;
+    border-radius: 6px;
 }
 
 .button:hover {
@@ -82,31 +89,41 @@ nav a:hover {
 }
 
 .section {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .section h2 {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 20px;
+}
+
+.section p {
+    color: #555;
+    max-width: 900px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 
 .card {
     background: #ffffff;
-    padding: 0;
-    border-radius: 6px;
+    border-radius: 10px;
     border: 1px solid #e5e5e5;
     overflow: hidden;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #d0d0d0;
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 170px;
     object-fit: cover;
 }
 
@@ -114,9 +131,10 @@ nav a:hover {
     padding: 20px;
 }
 
-.card strong {
+.card-content strong {
     display: block;
     margin-bottom: 8px;
+    font-size: 16px;
 }
 
 .footer {
@@ -125,6 +143,16 @@ nav a:hover {
     color: #777;
     border-top: 1px solid #e5e5e5;
     padding-top: 30px;
+}
+
+ul {
+    color: #555;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
@@ -145,25 +173,23 @@ nav a:hover {
 
 <!-- HERO -->
 <div class="hero">
-
-<img src="ativos/imagem/hero-datacenter.jpg" alt="Infraestrutura IA">
-
-<h1>Camada Analítica de Consistência Operacional</h1>
-
+<div>
+<h1>Camada Analítica de Consistência Operacional (CACO)</h1>
 <p>
 A ResilientQ desenvolve uma camada analítica complementar voltada à organização estruturada de evidências operacionais.
 O modelo atua como suporte à decisão em ambientes complexos, preservando confidencialidade metodológica.
 </p>
-
 <a class="button" href="#contato">Solicitar Alinhamento Técnico</a>
+</div>
+
+<div>
+<img src="assets/img/hero-datacenter.jpg" alt="Infraestrutura crítica de datacenter">
+</div>
 </div>
 
 <!-- SOLUÇÃO -->
 <div class="section" id="solucao">
 <h2>Solução</h2>
-
-<img src="ativos/imagem/tech-network.jpg" alt="Estrutura Analítica" style="width:100%; border-radius:6px; margin-bottom:30px;">
-
 <p>
 A tecnologia organiza sinais e indicadores sob condições controladas, identificando padrões de estabilidade e variação operacional.
 Atua como camada complementar aos sistemas existentes, contribuindo para triagem técnica e priorização de análise.
@@ -178,7 +204,7 @@ Metodologia proprietária não é exposta publicamente.
 <div class="cards">
 
 <div class="card">
-<img src="ativos/imagem/sector-agro.jpg" alt="Agronegócio">
+<img src="assets/img/sector-agro.jpg" alt="Agronegócio">
 <div class="card-content">
 <strong>Agronegócio</strong>
 Consistência operacional em ambientes agrícolas e variabilidade ambiental.
@@ -186,7 +212,7 @@ Consistência operacional em ambientes agrícolas e variabilidade ambiental.
 </div>
 
 <div class="card">
-<img src="ativos/imagem/datacenter-corridor.jpg" alt="Datacenter">
+<img src="assets/img/datacenter-corridor.jpg" alt="Datacenter">
 <div class="card-content">
 <strong>IA & Datacenters</strong>
 Interpretação estruturada de sinais em infraestrutura digital crítica.
@@ -194,7 +220,7 @@ Interpretação estruturada de sinais em infraestrutura digital crítica.
 </div>
 
 <div class="card">
-<img src="ativos/imagem/sector-satellite.jpg" alt="Satélite">
+<img src="assets/img/sector-satellite.jpg" alt="Satélite">
 <div class="card-content">
 <strong>Espacial & Satélites</strong>
 Análise estrutural em séries observacionais e dados públicos orbitais.
@@ -202,7 +228,7 @@ Análise estrutural em séries observacionais e dados públicos orbitais.
 </div>
 
 <div class="card">
-<img src="ativos/imagem/sector-drone.jpg" alt="Drone">
+<img src="assets/img/sector-drone.jpg" alt="Drone">
 <div class="card-content">
 <strong>Drones & Mobilidade Aérea</strong>
 Operação sob variação controlada em ambientes dinâmicos.
@@ -210,7 +236,7 @@ Operação sob variação controlada em ambientes dinâmicos.
 </div>
 
 <div class="card">
-<img src="ativos/imagem/sector-industrial.jpg" alt="Indústria">
+<img src="assets/img/sector-industrial.jpg" alt="Indústria">
 <div class="card-content">
 <strong>Indústria & Motores</strong>
 Triagem de consistência operacional em sistemas mecânicos e eletromecânicos.
@@ -220,12 +246,13 @@ Triagem de consistência operacional em sistemas mecânicos e eletromecânicos.
 </div>
 </div>
 
-<!-- POCs -->
+<!-- POCS -->
 <div class="section" id="pocs">
 <h2>Provas de Conceito (PoCs)</h2>
 
 <p>
-Agenda aberta para Provas de Conceito institucionais.
+Agenda aberta para Provas de Conceito institucionais.  
+Formato típico:
 </p>
 
 <ul>
@@ -235,8 +262,10 @@ Agenda aberta para Provas de Conceito institucionais.
 </ul>
 
 <p>
-Aplicações demonstrativas realizadas com dados públicos estão disponíveis mediante solicitação.
+Estudos demonstrativos baseados em dados públicos estão disponíveis mediante solicitação.
 </p>
+
+<img src="assets/img/tech-network.jpg" alt="Rede tecnológica" style="width:100%; border-radius:10px; border:1px solid #ddd; margin-top:25px;">
 </div>
 
 <!-- CONTATO -->
@@ -248,13 +277,13 @@ Para alinhamento técnico ou avaliação de PoC:
 </p>
 
 <p>
-Email: contato@SEUDOMINIO.com<br>
-LinkedIn: linkedin.com/company/resilientq
+Email: <a href="mailto:contato@resilientq.com">contato@resilientq.com</a><br>
+LinkedIn: <a href="https://linkedin.com/company/resilientq" target="_blank">linkedin.com/company/resilientq</a>
 </p>
 </div>
 
 <div class="footer">
-© 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos.
+© 2026 ResilientQ — Estudos demonstrativos baseados em dados públicos.<br>
 Camada analítica complementar. Metodologia proprietária não exposta.
 </div>
 
