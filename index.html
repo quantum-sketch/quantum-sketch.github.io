@@ -43,8 +43,15 @@ nav a:hover {
     color: #000;
 }
 
+/* HERO COM IMAGEM */
 .hero {
     margin-bottom: 80px;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 40px;
 }
 
 .hero h1 {
@@ -91,9 +98,20 @@ nav a:hover {
 
 .card {
     background: #ffffff;
-    padding: 25px;
+    padding: 0;
     border-radius: 6px;
     border: 1px solid #e5e5e5;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
 }
 
 .card strong {
@@ -125,17 +143,27 @@ nav a:hover {
 </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero">
+
+<img src="ativos/imagem/hero-datacenter.jpg" alt="Infraestrutura IA">
+
 <h1>Camada Analítica de Consistência Operacional</h1>
+
 <p>
 A ResilientQ desenvolve uma camada analítica complementar voltada à organização estruturada de evidências operacionais.
 O modelo atua como suporte à decisão em ambientes complexos, preservando confidencialidade metodológica.
 </p>
+
 <a class="button" href="#contato">Solicitar Alinhamento Técnico</a>
 </div>
 
+<!-- SOLUÇÃO -->
 <div class="section" id="solucao">
 <h2>Solução</h2>
+
+<img src="ativos/imagem/tech-network.jpg" alt="Estrutura Analítica" style="width:100%; border-radius:6px; margin-bottom:30px;">
+
 <p>
 A tecnologia organiza sinais e indicadores sob condições controladas, identificando padrões de estabilidade e variação operacional.
 Atua como camada complementar aos sistemas existentes, contribuindo para triagem técnica e priorização de análise.
@@ -143,44 +171,61 @@ Metodologia proprietária não é exposta publicamente.
 </p>
 </div>
 
+<!-- SETORES -->
 <div class="section" id="setores">
 <h2>Setores de Aplicação</h2>
 
 <div class="cards">
 
 <div class="card">
+<img src="ativos/imagem/sector-agro.jpg" alt="Agronegócio">
+<div class="card-content">
 <strong>Agronegócio</strong>
 Consistência operacional em ambientes agrícolas e variabilidade ambiental.
 </div>
+</div>
 
 <div class="card">
+<img src="ativos/imagem/datacenter-corridor.jpg" alt="Datacenter">
+<div class="card-content">
 <strong>IA & Datacenters</strong>
 Interpretação estruturada de sinais em infraestrutura digital crítica.
 </div>
+</div>
 
 <div class="card">
+<img src="ativos/imagem/sector-satellite.jpg" alt="Satélite">
+<div class="card-content">
 <strong>Espacial & Satélites</strong>
 Análise estrutural em séries observacionais e dados públicos orbitais.
 </div>
+</div>
 
 <div class="card">
+<img src="ativos/imagem/sector-drone.jpg" alt="Drone">
+<div class="card-content">
 <strong>Drones & Mobilidade Aérea</strong>
 Operação sob variação controlada em ambientes dinâmicos.
 </div>
+</div>
 
 <div class="card">
+<img src="ativos/imagem/sector-industrial.jpg" alt="Indústria">
+<div class="card-content">
 <strong>Indústria & Motores</strong>
 Triagem de consistência operacional em sistemas mecânicos e eletromecânicos.
 </div>
+</div>
 
 </div>
 </div>
 
+<!-- POCs -->
 <div class="section" id="pocs">
 <h2>Provas de Conceito (PoCs)</h2>
+
 <p>
 Agenda aberta para Provas de Conceito institucionais.
-Formato típico:
 </p>
 
 <ul>
@@ -192,11 +237,12 @@ Formato típico:
 <p>
 Aplicações demonstrativas realizadas com dados públicos estão disponíveis mediante solicitação.
 </p>
-
 </div>
 
+<!-- CONTATO -->
 <div class="section" id="contato">
 <h2>Contato</h2>
+
 <p>
 Para alinhamento técnico ou avaliação de PoC:
 </p>
